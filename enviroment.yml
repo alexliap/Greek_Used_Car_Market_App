@@ -1,6 +1,0 @@
-name: greek_used_car_market_app
-dependencies:
-  - plotly=5.13.1
-  - numpy
-  - pandas
-  - scikit-learn
