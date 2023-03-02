@@ -24,6 +24,7 @@ if __name__ == '__main__':
     by_brand = st.sidebar.checkbox('Brand')
     by_model = st.sidebar.checkbox('Model')
 
+    checkboxes = [get_suggestion, by_brand, by_model]
     if by_brand and not by_model and not get_suggestion:
         with st.sidebar.container():
             st.header('Simple Search')
@@ -136,7 +137,10 @@ if __name__ == '__main__':
         s_transmission = col2.selectbox('Transmission',
                                         df['transmission'].unique())
 
-        suggestion = col1.button('Proceed')
+        tooltip_text = "The suggestion you get is a rough estimate of the " \
+                       "cars market worth, bacause the data used might " \
+                       "not be enough."
+        suggestion = col1.button('Proceed', help = tooltip_text)
         if suggestion:
             prediction = model.get_prediction(df, s_brand, s_model,
                                                    s_year, s_mileage,
@@ -145,3 +149,6 @@ if __name__ == '__main__':
 
             col1.write(f'### Car sale price suggestion for {s_brand} {s_model}:'
                        f' {prediction.astype("int32")} \N{euro sign}')
+    elif sum(checkboxes) >= 2:
+        st.write(f'#### Please have only one box checked at a time to get a '
+                 f'result!')
