@@ -96,9 +96,9 @@ if __name__ == '__main__':
         col1, col2 = st.columns([2.5, 1])
         # col2.write(metrics.brand_metrics(df, brand))
         try:
-            fig = plots.model_bar_chart(df, brand, model, min_km, max_km,
-                                        min_price, max_price, min_cc, max_cc,
-                                        min_hp, max_hp)
+            fig = plots.model_histogram_chart(df, brand, model, min_km, max_km,
+                                              min_price, max_price, min_cc,
+                                              max_cc, min_hp, max_hp)
             col1.plotly_chart(fig, use_container_width = True)
         except:
             pass
@@ -112,9 +112,9 @@ if __name__ == '__main__':
             pass
 
         try:
-            fig = plots.model_histogram_chart(df, brand, model, min_km, max_km,
-                                              min_price, max_price, min_cc,
-                                              max_cc, min_hp, max_hp)
+            fig = plots.model_bar_chart(df, brand, model, min_km, max_km,
+                                        min_price, max_price, min_cc,
+                                        max_cc, min_hp, max_hp)
             col1.plotly_chart(fig, use_container_width = True)
         except:
             pass
