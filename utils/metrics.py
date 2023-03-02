@@ -3,6 +3,12 @@ import numpy as np
 
 
 def brand_metrics(df: pd.DataFrame, brand: str):
+    """
+    Prints some metrics when a brand is chosen on 'search by brand' page
+    :param df: Dataframe data
+    :param brand: The brand that is chosen
+    :return: string
+    """
     dummy = df.query(f'brand == "{brand}"')
     pop = f'Number of used {brand} cars: {len(dummy)}'
     dummy = dummy.query('price != "Ask price"')
