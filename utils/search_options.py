@@ -67,11 +67,11 @@ def km_tag(min_km, max_km):
     :return: search tag (string)
     """
     if min_km != 0 and max_km != 0:
-        return f'Mileage: {min_km} - {max_km}'
+        return f'Mileage: {min_km} - {max_km} km'
     elif min_km != 0 and max_km == 0:
-        return f'Mileage: from {min_km}'
+        return f'Mileage: from {min_km} km'
     elif min_km == 0 and max_km != 0:
-        return f'Mileage: to {max_km}'
+        return f'Mileage: to {max_km} km'
 
 
 def price_tag(min_price, max_price):
@@ -82,11 +82,11 @@ def price_tag(min_price, max_price):
     :return: search tag (string)
     """
     if min_price != 0 and max_price != 0:
-        return f'Price: {max_price} - {max_price}'
+        return f'Price: {min_price} - {max_price} \N{euro sign}'
     elif min_price != 0 and max_price == 0:
-        return f'Price: from {max_price}'
+        return f'Price: from {min_price} \N{euro sign}'
     elif min_price == 0 and max_price != 0:
-        return f'Price: to {max_price}'
+        return f'Price: to {max_price} \N{euro sign}'
 
 
 def displacement_tag(min_cc, max_cc):
@@ -97,11 +97,11 @@ def displacement_tag(min_cc, max_cc):
     :return: search tag (string)
     """
     if min_cc != 0 and max_cc != 0:
-        return f'Displacement: {max_cc} - {max_cc}'
+        return f'Displacement: {min_cc} - {max_cc} cc'
     elif min_cc != 0 and max_cc == 0:
-        return f'Displacement: from {max_cc}'
+        return f'Displacement: from {min_cc} cc'
     elif min_cc == 0 and max_cc != 0:
-        return f'Displacement: to {max_cc}'
+        return f'Displacement: to {max_cc} cc'
 
 
 def hp_tag(min_hp, max_hp):
@@ -112,8 +112,8 @@ def hp_tag(min_hp, max_hp):
     :return: search tag (string)
     """
     if min_hp != 0 and max_hp != 0:
-        return f'Horse Power: {max_hp} - {max_hp}'
+        return f'Horse Power: {min_hp} - {max_hp} hp'
     elif min_hp != 0 and max_hp == 0:
-        return f'Horse Power: from {max_hp}'
+        return f'Horse Power: from {min_hp} hp'
     elif min_hp == 0 and max_hp != 0:
-        return f'Horse Power: to {max_hp}'
+        return f'Horse Power: to {max_hp} hp'
