@@ -3,7 +3,7 @@ import pandas as pd
 from utils import plots, search_options, metrics, model
 
 if __name__ == '__main__':
-    df = pd.read_csv('data.csv', index_col = 0)
+    df = pd.read_csv('data_new.csv', index_col = 0)
 
     st.title('Greek Used Car Market Stats')
     st.markdown('*This is a simple app that shows statistics about '
