@@ -32,7 +32,7 @@ def get_prediction(df, brand, model, year, mileage, cc, hp, fuel,
     dummy = dummy.query('price != "Ask price"')
     dummy.reset_index(drop = True, inplace = True)
     dummy.drop(['title', 'category', 'location', 'brand',
-                'model', 'link', 'town'], axis = 1, inplace = True)
+                'model', 'link', 'town', 'zip_codes'], axis = 1, inplace = True)
     dummy['price'] = dummy['price'].values.astype('int32')
     """
     Prepare fuel and transmission columns to use them for training.
